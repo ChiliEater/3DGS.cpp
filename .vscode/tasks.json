@@ -1,0 +1,36 @@
+{
+    "tasks": [
+        {
+            "label": "Prepare",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-DCMAKE_BUILD_TYPE=Debug", 
+                "-S", "./", 
+                "-B", "./build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Compile",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build", "./build",
+                "-j8"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build",
+            "dependsOn": ["Prepare", "Compile"]
+        }
+    ],
+    "version": "2.0.0"
+}
