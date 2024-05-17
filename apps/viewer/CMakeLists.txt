@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.26)
-project(3dgs_viewer)
+project(gs_viewer)
 
-add_executable(3dgs_viewer main.cpp)
+add_executable(gs_viewer main.cpp)
 
-target_include_directories(3dgs_viewer PRIVATE third_party)
+target_include_directories(gs_viewer PRIVATE third_party)
 
-target_link_libraries(3dgs_viewer PRIVATE
+target_link_libraries(gs_viewer PRIVATE
     libenvpp::libenvpp
-    3dgs_cpp)
+    gs_cpp)

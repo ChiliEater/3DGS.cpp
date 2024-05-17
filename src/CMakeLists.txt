@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.26)
-project(3dgs_cpp)
+project(gs_cpp)
 
 add_subdirectory(shaders)
 
@@ -21,12 +21,12 @@ file(GLOB SOURCE
 # Remove DummyGUIManager.cpp from source list
 list(REMOVE_ITEM SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/DummyGUIManager.cpp)
 
-add_library(3dgs_cpp STATIC
+add_library(gs_cpp STATIC
         ${SOURCE}
         ${EXTERNAL_SOURCE}
 )
 
-target_include_directories(3dgs_cpp
+target_include_directories(gs_cpp
         PUBLIC
         ${CMAKE_SOURCE_DIR}/include/3dgs
         PRIVATE
@@ -40,9 +40,9 @@ target_include_directories(3dgs_cpp
         ${CMAKE_BINARY_DIR}/shaders
 )
 
-add_dependencies(3dgs_cpp shaders)
+add_dependencies(gs_cpp gs_shaders)
 
-target_link_libraries(3dgs_cpp PUBLIC Vulkan::Vulkan glfw spdlog::spdlog)
+target_link_libraries(gs_cpp PUBLIC Vulkan::Vulkan glfw spdlog::spdlog)
 if (UNIX)
-    target_link_libraries(3dgs_cpp PUBLIC ${CMAKE_DL_LIBS})
+    target_link_libraries(gs_cpp PUBLIC ${CMAKE_DL_LIBS})
 endif ()

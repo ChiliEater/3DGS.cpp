@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.26)
-project(3dgs_cpp_root)
+project(gs_cpp_root)
 
 include(FetchContent)
 

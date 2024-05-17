@@ -54,7 +54,7 @@ foreach (GLSL ${GLSL_SOURCE_FILES})
     list(APPEND TEMP_HEADERS ${TEMP_HEADER})
 endforeach (GLSL)
 
-add_custom_target(shaders DEPENDS ${SHADER_HEADER} ${SPIRV_BINARY_FILES})
+add_custom_target(gs_shaders DEPENDS ${SHADER_HEADER} ${SPIRV_BINARY_FILES})
 
 add_custom_target(xcode_shaders
         DEPENDS
