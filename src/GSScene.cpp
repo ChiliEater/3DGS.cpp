@@ -6,7 +6,6 @@
 #include "GSScene.h"
 
 #include <random>
-#include "shaders.h"
 
 #include "vulkan/Utils.h"
 #include "vulkan/DescriptorSet.h"
