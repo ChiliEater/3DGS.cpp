@@ -5,8 +5,16 @@
 #include "vulkan/Swapchain.h"
 
 #include <memory>
+#include "hist.h"
+#include "sort.h"
+#include "calibrate.h"
+//#include "common.h"
+#include "precomp_cov3d.h"
+#include "prefix_sum.h"
+#include "preprocess_sort.h"
 #include "preprocess.h"
 #include "render.h"
+#include "tile_boundary.h"
 #include <utility>
 
 #include <glm/glm.hpp>
