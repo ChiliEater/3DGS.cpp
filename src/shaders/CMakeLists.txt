@@ -27,11 +27,10 @@ set(FILE_NAME_UPPER "SPV_${FILE_NAME_UPPER}")
 set(SPIRV "${CMAKE_BINARY_DIR}/shaders/${FILE_NAME}.spv")
 set(HIST_HEADER "${CMAKE_BINARY_DIR}/shaders/${FILE_NAME}.h")
 
-
 add_custom_command(
         OUTPUT ${SPIRV}
-        OUTPUT ${HIST_HEADER}
         COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/shaders/"
+        COMMAND ${CMAKE_COMMAND} -E remove ${HIST_HEADER}
         COMMAND ${Vulkan_GLSLANG_VALIDATOR_EXECUTABLE} "--target-env" "vulkan1.2" -V ${GLSL} -o ${SPIRV} ${GLSLC_DEFINE}
         DEPENDS ${GLSL}
 )
